@@ -905,6 +905,23 @@ _WndProc(
     */
 
     HandleMouseHide(uMsg, lParam);
+    if(uMsg == WM_KEYUP && wParam == VK_F11) {
+        static int full = 0;
+        static RECT rc;
+        if(full) {
+            SetWindowLongPtr(hwnd, GWL_STYLE, WS_OVERLAPPEDWINDOW | WS_VISIBLE);
+            SetClassLongPtr(s_hwnd, GCL_HBRBACKGROUND, (LONG)COLOR_BTNFACE);
+            SetWindowPos(hwnd, HWND_NOTOPMOST, rc.left, rc.top, rc.right - rc.left, rc.bottom - rc.top, SWP_FRAMECHANGED);
+        }
+        else {
+            GetWindowRect(hwnd, &rc);
+            SetWindowLongPtr(hwnd, GWL_STYLE, WS_POPUP | WS_VISIBLE);
+            SetClassLongPtr(s_hwnd, GCL_HBRBACKGROUND, (LONG)GetStockObject(BLACK_BRUSH));
+            SetWindowPos(hwnd, HWND_TOPMOST, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), SWP_FRAMECHANGED);
+        }
+        full = !full;
+        return 0;
+    }
 
     s_uMsg = uMsg;
     s_wParam = wParam;
