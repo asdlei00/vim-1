@@ -5618,7 +5618,7 @@ get_option_tv(arg, rettv, evaluate)
 {
     char_u	*option_end;
     long	numval;
-    char_u	*stringval;
+    char_u	*stringval = NULL;
     int		opt_type;
     int		c;
     int		working = (**arg == '+');    /* has("+option") */
@@ -12572,8 +12572,8 @@ getwinvar(argvars, rettv, off)
     tabpage_T	*tp = NULL;
     int		done = FALSE;
 #ifdef FEAT_WINDOWS
-    win_T	*oldcurwin;
-    tabpage_T	*oldtabpage;
+    win_T	*oldcurwin = NULL;
+    tabpage_T	*oldtabpage = NULL;
     int		need_switch_win;
 #endif
 

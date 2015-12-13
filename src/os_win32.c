@@ -3242,7 +3242,7 @@ mch_is_linked(char_u *fname)
     int
 win32_fileinfo(char_u *fname, BY_HANDLE_FILE_INFORMATION *info)
 {
-    HANDLE	hFile;
+    HANDLE	hFile = INVALID_HANDLE_VALUE;
     int		res = FILEINFO_READ_FAIL;
 #ifdef FEAT_MBYTE
     WCHAR	*wn = NULL;
@@ -3455,7 +3455,7 @@ mch_can_exe(char_u *name, char_u **path, int use_path)
     int
 mch_nodetype(char_u *name)
 {
-    HANDLE	hFile;
+    HANDLE	hFile = INVALID_HANDLE_VALUE;
     int		type;
 #ifdef FEAT_MBYTE
     WCHAR	*wn = NULL;

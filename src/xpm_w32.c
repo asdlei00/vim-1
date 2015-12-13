@@ -28,7 +28,7 @@
 /* Engage Windows support in libXpm */
 #define FOR_MSW
 
-#include "xpm.h"
+#include "xpm/x86/../include/xpm.h"
 
 /*
  * Tries to load an Xpm image from the file "filename".

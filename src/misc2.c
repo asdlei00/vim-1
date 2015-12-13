@@ -3427,7 +3427,7 @@ parse_shape_opt(what)
     char_u	*colonp;
     char_u	*commap;
     char_u	*slashp;
-    char_u	*p, *endp;
+    char_u	*p = NULL, *endp;
     int		idx = 0;		/* init for GCC */
     int		all_idx;
     int		len;

@@ -4741,7 +4741,7 @@ multiline_balloon_available(void)
 	    DWORD len = GetFileVersionInfoSize(comctl_dll, &dwHandle);
 	    if (len > 0)
 	    {
-		VS_FIXEDFILEINFO *ver;
+		VS_FIXEDFILEINFO *ver = NULL;
 		UINT vlen = 0;
 		void *data = alloc(len);
 

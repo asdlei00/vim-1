@@ -850,8 +850,8 @@ cs_create_connection(i)
     PROCESS_INFORMATION pi;
     STARTUPINFO si;
     BOOL	pipe_stdin = FALSE, pipe_stdout = FALSE;
-    HANDLE	stdin_rd, stdout_rd;
-    HANDLE	stdout_wr, stdin_wr;
+    HANDLE	stdin_rd = NULL, stdout_rd = NULL;
+    HANDLE	stdout_wr = NULL, stdin_wr = NULL;
     BOOL	created;
 # ifdef __BORLANDC__
 #  define OPEN_OH_ARGTYPE long

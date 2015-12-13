@@ -4001,7 +4001,7 @@ enter_tabpage(tp, old_curbuf, trigger_enter_autocmds, trigger_leave_autocmds)
 goto_tabpage(n)
     int	    n;
 {
-    tabpage_T	*tp;
+    tabpage_T	*tp = NULL;
     tabpage_T	*ttp;
     int		i;
 

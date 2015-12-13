@@ -30,9 +30,12 @@ src/auto/pathdef.c
 *.suo
 *.res
 *.RES
+*.sdf
+*.opensdf
 src/if_perl.c
 src/pathdef.c
 src/Obj*/pathdef.c
+src/vs13/Debug/
 gvimext.dll
 gvimext.lib
 

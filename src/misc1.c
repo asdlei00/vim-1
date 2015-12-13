@@ -617,7 +617,7 @@ open_line(dir, flags, second_line_indent)
 #ifdef FEAT_COMMENTS
     int		extra_len = 0;		/* length of p_extra string */
     int		lead_len;		/* length of comment leader */
-    char_u	*lead_flags;	/* position in 'comments' for comment leader */
+    char_u	*lead_flags = NULL;	/* position in 'comments' for comment leader */
     char_u	*leader = NULL;		/* copy of comment leader */
 #endif
     char_u	*allocated = NULL;	/* allocated memory */

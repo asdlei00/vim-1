@@ -3059,7 +3059,7 @@ ins_compl_dictionaries(dict_start, pat, flags, thesaurus)
     char_u	*ptr;
     char_u	*buf;
     regmatch_T	regmatch;
-    char_u	**files;
+    char_u	**files = NULL;
     int		count;
     int		save_p_scs;
     int		dir = compl_direction;

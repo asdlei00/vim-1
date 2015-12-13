@@ -4299,7 +4299,7 @@ iconv_string(vcp, str, slen, unconvlenp, resultlenp)
 {
     const char	*from;
     size_t	fromlen;
-    char	*to;
+    char	*to = NULL;
     size_t	tolen;
     size_t	len = 0;
     size_t	done = 0;
